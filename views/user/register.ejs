@@ -1,0 +1,52 @@
+<% var user = null %>
+<% var email = null %>
+<%if (typeof data == 'object' && data) { %>
+	<% if (typeof data.username == 'string' && data.username) { %>
+		<% user = data.username %>
+	<% } %>
+	<% if (typeof data.email == 'string' && data.email) { %>
+		<% email = data.email %>
+	<% } %>
+<% } %>
+
+<div class="container">
+	<h2>Signup</h2>
+	<form action="/register" method="post">
+
+      <div class="row">
+        <div class="input-field col s6">
+			<i class="material-icons prefix">account_circle</i>
+			<input name="username" id="username" type="text" class="validate" value="<%= user %>">
+			<label for="username">Username</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+			<i class="material-icons prefix">email</i>
+			<input name="email" id="email" type="email" class="validate" value="<%= email %>">
+			<label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+			<i class="material-icons prefix">lock</i>
+			<input name="password" id="password" type="password" class="validate">
+			<label for="password">Password</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+			<i class="material-icons prefix">lock</i>
+			<input name="password_check" id="password_check" type="password" class="validate">
+			<label for="password">Confirm your password</label>
+        </div>
+      </div>
+
+	 <input class="btn orange" type="submit" value="Register"/>
+	</form>
+</div>
+
+

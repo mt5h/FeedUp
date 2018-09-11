@@ -1,0 +1,50 @@
+{
+  "name": "feed-up",
+  "private": true,
+  "version": "1.0.0",
+  "description": "a simple sails feed viewer",
+  "keywords": [],
+  "dependencies": {
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.3",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "async": "2.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "detect-character-encoding": "^0.6.0",
+    "fast-xml-parser": "^3.12.0",
+    "grunt": "1.0.1",
+    "iconv-lite": "^0.4.24",
+    "jsonwebtoken": "^8.3.0",
+    "mongodb": "^3.1.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "sails": "^1.0.2",
+    "sails-hook-flash": "^0.2.2",
+    "sails-hook-grunt": "^3.0.2",
+    "sails-hook-orm": "^2.0.0-16",
+    "sails-hook-sockets": "^1.4.0",
+    "sails-mongo": "^1.0.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@sailshq/eslint": "^4.19.3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:mt5h/FeedUp.git"
+  },
+  "author": "mt5h",
+  "license": "",
+  "engines": {
+    "node": ">=10.8"
+  }
+}

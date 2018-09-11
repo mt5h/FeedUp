@@ -1,0 +1,29 @@
+<ul class="collapsible popout feed-detail-collapsible sub-collapsible">
+<% rss.forEach(function(el){ %>
+	<li>
+		<div class="collapsible-header sub-collapsible-header" data-itemid="<%= el.id %>" data-rssid="<%= rss_id %>" onclick="restore_class(this)">
+				<div class="collapsible-row row">
+					<div class="col s2 m1 l1 center">
+						<%  var notclass = "orange"; if( el.notification ){ notclass = "pulse red" }%>
+						<a href="<%= el.link %>" target="_blank" class="inner-notification center btn-floating <%= notclass %>">
+							<i class="white-text material-icons" style="width: inherit !important;">rss_feed</i>
+						</a>
+					</div>
+
+					<div class="col s10 m7 l7 center">
+						<%= el.title %>
+					</div>
+
+					<div class="col m4 m4 hide-on-small-only center">
+						<% var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'}; %>
+						<% var pippo = new Date(el.pubDate); %>
+						<%= pippo.toLocaleDateString(locale, options) %>
+					</div>
+				</div>
+		</div>
+	    <div class="collapsible-body sub-collapsible-body">
+				<div><%- el.description %></div>
+		</div>
+	</li>
+<% }) %>
+</ul>

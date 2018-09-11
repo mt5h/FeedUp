@@ -1,0 +1,72 @@
+<div class="modal" id="add-modal">
+	<div class="modal-content">
+		<div class="row">
+			<div class="input-field col s12 m6">
+				<input id="url" type="url" class="validate" required>
+				<label for="url">Url</label>
+			</div>
+			<div class="col s12 m6">
+				<a href="#" id="check-url" class="btn waves-effect waves-green indigo">
+					<span><%= __('check_url') %></span>
+					<i id="feed-action" class="material-icons left">send</i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12 m6">
+				<input id="title" type="text" class="validate" required>
+				<label for="url"><%= __('title') %></label>
+			</div>
+			<div class="input-field col s12 m6">
+				<input id="description" type="text" class="validate">
+				<label for="description"><%= __('description') %></label>
+			</div>
+			<div class="input-field col s12 m6">
+				<input id="website" type="url" class="validate" required>
+				<label for="url">Website</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12 m6">
+				<select id="category-select">
+					<option value="" disabled selected><%= __('choose_category') %></option>
+					<option value="education"><%= __('education') %></option>
+					<option value="tech">Tech</option>
+					<option value="finance"><%= __('finance') %></option>
+					<option value="news">News</option>
+				</select>
+				<label><%= __('categories') %></label>
+			</div>
+
+			<div class="col s12 m6">
+			<label>
+				<input id="favourite-checkbox" type="checkbox" />
+				<span><%= __('add_to_favorites') %></span>
+			</label>
+			</div>
+		</div>
+		<div class="row">
+			<p class="range-field col s12  m6">
+			<span><%= __('update_fequency') %></span>
+			<input type="range" id="refresh-range" min="1" max="60" value="10"/>
+			</p>
+		</div>
+	</div>
+	<div class="row center-align">
+		<div class="modal-footer">
+			<div class="col s6 m6 l6">
+				<a href="#!" id="subscribe" class="btn-floating waves-effect waves-green green">
+					<i class="material-icons feed-action left">add</i>
+				</a>
+				<a href="#" id="delete-modal-close" class="btn-floating red white-text waves-effect waves-red" style="display: none">
+					<i class="material-icons left">delete</i>
+				</a>
+			</div>
+			<div class="col s6 m6 l6">
+				<a href="#" id="add-modal-close" class="btn-floating white-text orange waves-effect waves-orange">
+					<i class="material-icons left">navigate_before</i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

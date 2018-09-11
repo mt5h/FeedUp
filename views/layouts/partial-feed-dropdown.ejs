@@ -1,0 +1,20 @@
+<% feeds.forEach(function(el){ %>
+	<% if (el.category === category) { %>
+		<% item_counter += 1 %>
+		<li>
+			<div class="row dropdown-row">
+				<div class="col s9 center-align">
+					<a href="/feed/dashboard/<%= el.id %>" name="<%= el.id %>" class="query truncate indigo-text"> <%= el.title %> </a>
+				</div>
+				<div class="col s3 right align-center">
+					<a href="#" name="<%= el.id %>" class="btn-floating transparent z-depth-0" onclick="update_modal(this)"><i class="tiny indigo-text material-icons">edit</i></a>
+				</div>
+			</div>
+		</li>
+	<% } %>
+<% }) %>
+<% if (item_counter > 1){ %>
+<li>
+	<a href="/feed/dashboard/category/<%= category %>" class="btn indigo white-text"><%= __('view_all') %><i class="white-text material-icons right">send</i></a>
+</li>
+<% } %>

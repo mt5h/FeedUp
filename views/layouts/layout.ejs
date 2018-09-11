@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FeedUp</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--STYLES-->
+		<link rel="stylesheet" href="/styles/image-picker.css">
+		<link rel="stylesheet" href="/styles/importer.css">
+		<link rel="stylesheet" href="/styles/materialize.css">
+		<link rel="stylesheet" href="/styles/style.css">
+		<!--STYLES END-->
+	</head>
+	<body>
+		<header>
+		<div class="navbar-fixed orange">
+			<nav class="orange">
+				<div class="nav-wrapper container">
+					<a href="/" class="brand-logo"><i class="material-icons">rss_feed</i>FeedUp</a>
+					<ul class="right hide-on-med-and-down">
+						<a id="account-action" href="#" class="btn white indigo-text">Login</a>
+					</ul>
+					<ul class="right">
+						<li class="authenticated">
+						<a id='notification-button' class='notification-trigger' href='#' data-target='notification-list'>
+						<i class="material-icons notif">notifications_none</i>
+						<span id="notification-counter" class="notification-badge">0</span>
+						</a>
+							<ul id='notification-list' class='dropdown-content'></ul>
+						</li>
+						<li>
+							<a href="#" class="btn-flat-floating hide-on-large-only" id="menu-open"><i class="material-icons">menu</i></a>
+						</li>
+					</ul>
+
+				</div>
+			</nav>
+		</div>
+
+
+		<ul id="slide-out" class="sidenav">
+			<ul id="user-detail" class="authenticated">
+				<%- partial('partial-user.ejs') %>
+			</ul>
+
+			<ul class="hide-on-large-only">
+				<li><a id="account-action-mobile" href="#" class="btn white indigo-text">Login</a></li>
+			</ul>
+			<ul id="user-menu" class="authenticated"></ul>
+		</ul>
+		</header>
+		<main>
+			<div id="dashboard-main-div" class="container">
+				<%- body %>
+			</div>
+			<%- partial('partial-modal.ejs') %>
+		</main>
+
+		<footer class=" orange page-footer">
+
+		</footer>
+		<!--SCRIPTS-->
+		<script src="/dependencies/jquery-3.3.1.min.js"></script>
+		<script src="/js/image-picker.js"></script>
+		<script src="/js/layout.js"></script>
+		<script src="/js/materialize.js"></script>
+		<!--SCRIPTS END-->
+
+		<% flash.get('notification').forEach(function (message) { %>
+				<script type="text/javascript">M.toast({html: '<%= message %>', classes: 'green white-text'})</script>
+		<% }) %>
+		<% flash.get('error').forEach(function (message) { %>
+				<script type="text/javascript">M.toast({html: '<%= message %>', classes: 'red white-text'})</script>
+		<% }) %>
+	</body>
+</html>

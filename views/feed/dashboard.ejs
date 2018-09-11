@@ -1,0 +1,34 @@
+
+<ul class="collapsible" id="main-collapsible">
+<% feeds.forEach(function(feed){ %>
+<li data-feed=<%= feed.id %>>
+	<div class="collapsible-header main-collapsible-header">
+		<i class="material-icons">
+		<% if(feed.category == "education") {%>
+		school
+		<% } %>
+		<% if(feed.category == "tech") {%>
+		laptop_chromebook
+		<% } %>
+		<% if(feed.category == "news") {%>
+		description
+		<% } %>
+		<% if(feed.category == "finance") {%>
+		trending_up
+		<% } %>
+		<% if(feed.category == "misc") {%>
+		storage
+		<% } %>
+		</i>
+		<%= feed.title %><br>
+		<%= feed.description %>
+		<span class="orange white-text new badge update-badge" style="display:none"></span>
+	</div>
+		<div class="collapsible-body main-collapsible-body">
+			<div class="align-center progress yellow">
+		      <div class="orange indeterminate"></div>
+		  </div>
+		</div>
+</li>
+<% }) %>
+</ul>

@@ -1,0 +1,7 @@
+<% notifications.forEach(function(not){ %>
+	<li>
+		<a href="/feed/dashboard/<%= not.id %>" class="query truncate orange-text">
+			<%= not.title%><span class="orange white-text new badge right"><%= not.updates %></span>
+		</a>
+	</li>
+<% }) %>
